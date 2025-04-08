@@ -1,5 +1,6 @@
+Continuous accelerated rock weathering by marine bacteria with enhanced siderophore production. Dalvie /et. al./ 2025.
 
-The repository contains code to generate analytical solutions to the dual limitation model, and analysis code to produce paper figures for:
+The repository contains code to generate analytical solutions to the dual limitation model, and analysis code to produce paper figures.
 
 
 - =src/steadystate.py= generates the analytical expressions for the steady state solutions.
