@@ -1,0 +1,9 @@
+
+The repository contains code to generate analytical solutions to the dual limitation model, and analysis code to produce paper figures for:
+
+
+- =src/steadystate.py= generates the analytical expressions for the steady state solutions.
+  This script produces two other files
+  - =model/dual_siderophore_independent_breakdown.py= contains the steady state solutions.
+  - =model.dual_limitation_model.tex= contains the TeX code for the model definition.
+- =src/figures.py= generates model simulation figures in the main paper as well as in the supplement.
