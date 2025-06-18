@@ -13,7 +13,7 @@ The model requires sympy to solve for the analytical solutions of the model. The
 tree rock_weathering/
 #+end_src 
 
-#+begin_src example
+#+begin_src 
 rock_weathering/
 ├── __init__.py
 ├── figures.py
@@ -32,13 +32,16 @@ python rock_weathering/steadystate.py
 tree model/
 #+end_src
 
-#+RESULTS:
+
+#+begin_src 
 model/
 ├── __init__.py
 ├── dual_limitation_model.tex
 └── dual_siderophore_independent_breakdown.py
 
 2 directories, 3 files
+#+end_src
+
 
 - =rock_weathering/steadystate.py= generates the analytical expressions for the steady state solutions.
   This script produces two other files
@@ -67,7 +70,7 @@ python rock_weathering/figures.py
 tree fig/
 #+end_src
 
-#+RESULTS:
+#+begin_src 
 fig/
 ├── dual-limitation.png
 ├── fig1efg_cell.pdf
@@ -80,3 +83,4 @@ fig/
 └── fig1efg_optimal_siderophore.png
 
 1 directory, 9 files
+#+end_src
