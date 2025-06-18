@@ -22,17 +22,28 @@ rock_weathering/
 1 directory, 3 files
 #+end_src
 
-
 * Usage
+** Model solution
 #+begin_src python
 python rock_weathering/steadystate.py
 #+end_src
 
+#+begin_src bash :results raw
+tree model/
+#+end_src
+
+#+RESULTS:
+model/
+├── __init__.py
+├── dual_limitation_model.tex
+└── dual_siderophore_independent_breakdown.py
+
+2 directories, 3 files
 
 - =rock_weathering/steadystate.py= generates the analytical expressions for the steady state solutions.
   This script produces two other files
   - =model/dual_siderophore_independent_breakdown.py= contains the steady state solutions.
-  - =model.dual_limitation_model.tex= contains the TeX code for the model definition.
+  - =model/dual_limitation_model.tex= contains the TeX code for the model definition.
     #+begin_src latex
     \begin{align}
     \frac{d\text{Cell}}{dt} &=- \text{[Cell]}  D + \frac{\text{[Cell]}  \text{[Fe]}  \text{[Glucose]}  \mu_{max}}{\left(\text{[Fe]}  + K_{m1}\right) \left(\text{[Glucose]}  + K_{m2}\right)}\\
@@ -41,4 +52,31 @@ python rock_weathering/steadystate.py
     \frac{d\text{Glucose}}{dt} &=- \frac{\text{[Cell]}  \text{[Fe]}  \text{[Glucose]}  Y_{glc} \mu_{max}}{\left(\text{[Fe]}  + K_{m1}\right) \left(\text{[Glucose]}  + K_{m2}\right)} + D G_{0} - D \text{[Glucose]} 
     \end{align}
     #+end_src
+
+** Phase plane diagrams
+
+=model/dual_siderophore_independent_breakdown.py= is imported by =rock_weathering/figures.py= to compute the steady state solutions over a grid of input parameter values (dilution rate D and mass of sand M).
+
+#+begin_src python
+python rock_weathering/figures.py
+#+end_src
+
 - =rock_weathering/figures.py= generates model simulation figures in the main paper as well as in the supplement.
+
+#+begin_src bash :results raw
+tree fig/
+#+end_src
+
+#+RESULTS:
+fig/
+├── dual-limitation.png
+├── fig1efg_cell.pdf
+├── fig1efg_cell.png
+├── fig1efg_free_glucose.pdf
+├── fig1efg_free_glucose.png
+├── fig1efg_free_iron.pdf
+├── fig1efg_free_iron.png
+├── fig1efg_optimal_siderophore.pdf
+└── fig1efg_optimal_siderophore.png
+
+1 directory, 9 files
