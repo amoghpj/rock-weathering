@@ -2,11 +2,40 @@ Continuous accelerated rock weathering by marine bacteria with enhanced sideroph
 
 The repository contains code to generate analytical solutions to the dual limitation model, and analysis code to produce paper figures.
 
-* Requirements
+* Setup 
+See =./requirements.txt=
+The model requires sympy to run. The code has been tested on MacOS Sonoma 14.7 and Ubuntu 18.0.
 
-* Instructions
-- =src/steadystate.py= generates the analytical expressions for the steady state solutions.
+* Contents
+
+#+begin_src bash :results output
+tree rock_weathering/
+#+end_src 
+
+#+RESULTS:
+: rock_weathering/
+: ├── __init__.py
+: ├── figures.py
+: └── steadystate.py
+: 
+: 1 directory, 3 files
+
+- =rock_weathering/steadystate.py= generates the analytical expressions for the steady state solutions.
   This script produces two other files
   - =model/dual_siderophore_independent_breakdown.py= contains the steady state solutions.
   - =model.dual_limitation_model.tex= contains the TeX code for the model definition.
-- =src/figures.py= generates model simulation figures in the main paper as well as in the supplement.
+    #+begin_export latex
+    \begin{align}
+    \frac{d\text{Cell}}{dt} &=- \text{[Cell]}  D + \frac{\text{[Cell]}  \text{[Fe]}  \text{[Glucose]}  \mu_{max}}{\left(\text{[Fe]}  + K_{m1}\right) \left(\text{[Glucose]}  + K_{m2}\right)}\\
+    \frac{d\text{Siderophore}}{dt} &=\frac{\text{[Cell]}  \text{[Fe]}  \text{[Glucose]}  K Y_{sid} \mu_{max}}{\left(\text{[Fe]}  + K\right) \left(\text{[Fe]}  + K_{m1}\right) \left(\text{[Glucose]}  + K_{m2}\right)} - D \text{[Siderophore]} \\
+    \frac{d\text{Fe}}{dt} &=- \frac{\text{[Cell]}  \text{[Fe]}  \text{[Glucose]}  Y_{fe} \mu_{max}}{\left(\text{[Fe]}  + K_{m1}\right) \left(\text{[Glucose]}  + K_{m2}\right)} - D \text{[Fe]}  + M R\\
+    \frac{d\text{Glucose}}{dt} &=- \frac{\text{[Cell]}  \text{[Fe]}  \text{[Glucose]}  Y_{glc} \mu_{max}}{\left(\text{[Fe]}  + K_{m1}\right) \left(\text{[Glucose]}  + K_{m2}\right)} + D G_{0} - D \text{[Glucose]} 
+    \end{align}
+    #+end_export
+- =rock_weathering/figures.py= generates model simulation figures in the main paper as well as in the supplement.
+* Usage
+#+begin_src python
+python rock_weathering/steadystate.py
+#+end_src
+
+
