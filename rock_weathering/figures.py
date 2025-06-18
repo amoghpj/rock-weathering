@@ -3,7 +3,7 @@ Author: Amogh Jalihal
 Date: 2025-04-08
 """
 import sys
-sys.path.append('../')
+sys.path.append('./')
 import model.dual_siderophore_independent_breakdown as model
 import os
 
@@ -82,8 +82,8 @@ ax.set_xlabel("D (hr-1)")
 ax.set_ylabel("M (g)")
 ax.set_title("Optimal siderophore production")
 plt.tight_layout()
-plt.savefig("../fig/fig1efg_optimal_siderophore.png",dpi=200,bbox_inches="tight")
-plt.savefig("../fig/fig1efg_optimal_siderophore.pdf",dpi=200,bbox_inches="tight")
+plt.savefig("./fig/fig1efg_optimal_siderophore.png",dpi=200,bbox_inches="tight")
+plt.savefig("./fig/fig1efg_optimal_siderophore.pdf",dpi=200,bbox_inches="tight")
 plt.close("all")
 
 
@@ -104,8 +104,8 @@ ax.set_xlabel("D (hr-1)")
 ax.set_ylabel("M (g)")
 ax.set_title("Log10(Glucose concentration)")
 plt.tight_layout()
-plt.savefig("../fig/fig1efg_free_glucose.pdf",dpi=200,bbox_inches="tight")
-plt.savefig("../fig/fig1efg_free_glucose.png",dpi=200,bbox_inches="tight")
+plt.savefig("./fig/fig1efg_free_glucose.pdf",dpi=200,bbox_inches="tight")
+plt.savefig("./fig/fig1efg_free_glucose.png",dpi=200,bbox_inches="tight")
 plt.close("all")
 
 print("PLOT: 3. Cell density")
@@ -125,8 +125,8 @@ ax.set_xlabel("D (hr-1)")
 ax.set_ylabel("M (g)")
 ax.set_title("Cell density")
 plt.tight_layout()
-plt.savefig("../fig/fig1efg_cell.pdf",dpi=200,bbox_inches="tight")
-plt.savefig("../fig/fig1efg_cell.png",dpi=200,bbox_inches="tight")
+plt.savefig("./fig/fig1efg_cell.pdf",dpi=200,bbox_inches="tight")
+plt.savefig("./fig/fig1efg_cell.png",dpi=200,bbox_inches="tight")
 plt.close("all")
 
 print("PLOT: 4. Free iron concentrations")
@@ -142,8 +142,8 @@ ax.set_xlabel("D (hr-1)")
 ax.set_ylabel("M (g)")
 ax.set_title("Log10(Iron concentration)")
 plt.tight_layout()
-plt.savefig("../fig/fig1efg_free_iron.pdf",dpi=200,bbox_inches="tight")
-plt.savefig("../fig/fig1efg_free_iron.png",dpi=200,bbox_inches="tight")
+plt.savefig("./fig/fig1efg_free_iron.pdf",dpi=200,bbox_inches="tight")
+plt.savefig("./fig/fig1efg_free_iron.png",dpi=200,bbox_inches="tight")
 plt.close("all")
 
 
@@ -159,5 +159,5 @@ ax.set_xlabel("D")
 ax.set_ylabel("M")
 ax.set_title("(fe/(p_K_m1 + fe))/(glc/(p_K_m2 + glc))")
 plt.tight_layout()
-plt.savefig("../fig/dual-limitation.png")
+plt.savefig("./fig/dual-limitation.png")
 plt.close("all")

@@ -84,3 +84,5 @@ fig/
 
 1 directory, 9 files
 #+end_src
+
+NOTE: .png files omitted from github repo.

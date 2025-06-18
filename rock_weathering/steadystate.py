@@ -63,9 +63,7 @@ with open("./model/dual_limitation_model.tex", "w") as outfile:
 
 
 Fess = sm.solvers.solve(dCell, Fe)[0]
-print("Fess=", Fess)
 Glcss = sm.solvers.solve(dGlucose.subs(Fe, Fess), Glucose)[0]
-print("Glcss=", Glcss)
 Cellss_soln = sm.solvers.solve(dFe.subs(Fe, Fess).subs(Glucose, Glcss), Cell)
 Glc_final = sm.simplify(Glcss.subs(Cell, Cellss_soln[1]))
 Fe_final = sm.simplify(Fess.subs(Glucose, Glc_final))
