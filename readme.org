@@ -12,30 +12,32 @@ The model requires sympy to run. The code has been tested on MacOS Sonoma 14.7 a
 tree rock_weathering/
 #+end_src 
 
-#+RESULTS:
-: rock_weathering/
-: ├── __init__.py
-: ├── figures.py
-: └── steadystate.py
-: 
-: 1 directory, 3 files
+#+begin_src example
+rock_weathering/
+├── __init__.py
+├── figures.py
+└── steadystate.py
 
-- =rock_weathering/steadystate.py= generates the analytical expressions for the steady state solutions.
-  This script produces two other files
-  - =model/dual_siderophore_independent_breakdown.py= contains the steady state solutions.
-  - =model.dual_limitation_model.tex= contains the TeX code for the model definition.
-    #+begin_export latex
-    \begin{align}
-    \frac{d\text{Cell}}{dt} &=- \text{[Cell]}  D + \frac{\text{[Cell]}  \text{[Fe]}  \text{[Glucose]}  \mu_{max}}{\left(\text{[Fe]}  + K_{m1}\right) \left(\text{[Glucose]}  + K_{m2}\right)}\\
-    \frac{d\text{Siderophore}}{dt} &=\frac{\text{[Cell]}  \text{[Fe]}  \text{[Glucose]}  K Y_{sid} \mu_{max}}{\left(\text{[Fe]}  + K\right) \left(\text{[Fe]}  + K_{m1}\right) \left(\text{[Glucose]}  + K_{m2}\right)} - D \text{[Siderophore]} \\
-    \frac{d\text{Fe}}{dt} &=- \frac{\text{[Cell]}  \text{[Fe]}  \text{[Glucose]}  Y_{fe} \mu_{max}}{\left(\text{[Fe]}  + K_{m1}\right) \left(\text{[Glucose]}  + K_{m2}\right)} - D \text{[Fe]}  + M R\\
-    \frac{d\text{Glucose}}{dt} &=- \frac{\text{[Cell]}  \text{[Fe]}  \text{[Glucose]}  Y_{glc} \mu_{max}}{\left(\text{[Fe]}  + K_{m1}\right) \left(\text{[Glucose]}  + K_{m2}\right)} + D G_{0} - D \text{[Glucose]} 
-    \end{align}
-    #+end_export
-- =rock_weathering/figures.py= generates model simulation figures in the main paper as well as in the supplement.
+1 directory, 3 files
+#+end_src
+
+
 * Usage
 #+begin_src python
 python rock_weathering/steadystate.py
 #+end_src
 
 
+- =rock_weathering/steadystate.py= generates the analytical expressions for the steady state solutions.
+  This script produces two other files
+  - =model/dual_siderophore_independent_breakdown.py= contains the steady state solutions.
+  - =model.dual_limitation_model.tex= contains the TeX code for the model definition.
+    #+begin_src latex
+    \begin{align}
+    \frac{d\text{Cell}}{dt} &=- \text{[Cell]}  D + \frac{\text{[Cell]}  \text{[Fe]}  \text{[Glucose]}  \mu_{max}}{\left(\text{[Fe]}  + K_{m1}\right) \left(\text{[Glucose]}  + K_{m2}\right)}\\
+    \frac{d\text{Siderophore}}{dt} &=\frac{\text{[Cell]}  \text{[Fe]}  \text{[Glucose]}  K Y_{sid} \mu_{max}}{\left(\text{[Fe]}  + K\right) \left(\text{[Fe]}  + K_{m1}\right) \left(\text{[Glucose]}  + K_{m2}\right)} - D \text{[Siderophore]} \\
+    \frac{d\text{Fe}}{dt} &=- \frac{\text{[Cell]}  \text{[Fe]}  \text{[Glucose]}  Y_{fe} \mu_{max}}{\left(\text{[Fe]}  + K_{m1}\right) \left(\text{[Glucose]}  + K_{m2}\right)} - D \text{[Fe]}  + M R\\
+    \frac{d\text{Glucose}}{dt} &=- \frac{\text{[Cell]}  \text{[Fe]}  \text{[Glucose]}  Y_{glc} \mu_{max}}{\left(\text{[Fe]}  + K_{m1}\right) \left(\text{[Glucose]}  + K_{m2}\right)} + D G_{0} - D \text{[Glucose]} 
+    \end{align}
+    #+end_src
+- =rock_weathering/figures.py= generates model simulation figures in the main paper as well as in the supplement.
